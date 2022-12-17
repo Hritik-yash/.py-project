@@ -1,0 +1,40 @@
+def check_guess(guess, answer):
+    global score
+    still_guessing = True
+    attempt = 0
+    while still_guessing and attempt < 3:
+        if guess.lower() == answer.lower():
+            print("Correct Answer")
+            score = score + 1
+            still_guessing = False
+        else:
+            if attempt < 2:
+                guess = input("Sorry Wrong Answer, try again")
+            attempt = attempt + 1
+    if attempt == 3:
+        print("The Correct answer is ", answer)
+
+
+score = 0
+print("Guess the python questionaire")
+guess1 = input("Who developed python programming language? ")
+check_guess(guess1, "Guido Van Rossum")
+guess2 = input("In which year was the python language developed? ")
+check_guess(guess2, "1989")
+guess3 = input("In which language is python written? ")
+check_guess(guess3, "c programming")
+guess4 = input("Which of the following is correct extension of the python file? ")
+check_guess(guess4, ".py")
+guess5 = input("Which character in a python is used to make a single line comment? ")
+check_guess(guess5, "#")
+guess6 = input("What is the method inside the class in python language? ")
+check_guess(guess6, "Function")
+guess7 = input("Is python case sensitive when dealing with identifiers? ")
+check_guess(guess7, "yes")
+guess8 = input("Which keyword is used for function in python language? ")
+check_guess(guess8, "def")
+guess9 = input("Python supports the creation of anonymous functions at runtime,using a construct called? ")
+check_guess(guess9, "lambda")
+guess10 = input("What does PIP stands for python? ")
+check_guess(guess10, "Preferred Installer Program")
+print("Your Score is " + str(score))
